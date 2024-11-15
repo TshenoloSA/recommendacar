@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recommend a Car</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="detailing.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="carslogo.png" alt="logo">
+            <h1 style="color: #08c9c3;">Recommend a Car.</h1>
+        </div>
+
+        <div class="hamburger">☰</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allcars.html">All Cars</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#boxes">Get in Touch</a></li>
+            <li><button style="background-color: #ed3419;"><a href="SetAnAppointment.html#appointment" class="quote-btn"><b>Set an Appoinment</b></a></button></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleMenu = document.querySelector('.toggle-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            toggleMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <!-- Sidebar Nav Section -->
+    <div class="main-content">
+        <div class="sidebar-nav">
+            <h3 style="color: #ffa500;">Our Services</h3>
+            <br>
+            <nav>
+                <a href="insurance.html#friends-for-life">Insurance Deals</a>
+                <a href="#">RMI Workshops</a>
+                <a href="#">Roadside Assistance</a>
+                <a href="#">Car Spares</a>
+                <a href="detailing.html#thedetailinghub">Car Detailers</a>
+            </nav>
+        </div>
+
+  <!-- Insurance Section -->
+            <section class="insurance" id="thedetailinghub">
+                <h2>The Detailing Hub</h2>
+                <p>The Detailing Hub is your go-to mobile detailing service in Johannesburg, Gauteng, offering comprehensive and convenient auto care. We specialize in enhancing and restoring vehicles from headlight to tailpipe, whether it’s an old, new, or classic car we’ve got you covered.</p>
+                <p>Our team of skilled professionals is committed to delivering premium auto care, from headlight restoration to comprehensive interior and exterior detailing. Serving all of Gauteng, including Johannesburg, Pretoria, Ekurhuleni, Sedibeng and Westrand, we bring our extensive range of services right to your doorstep.</p>
+                <p>Contact Tshepo 081 305 6637</p>
+                <a href="https://thedetailinghub.co.za/">The Detailing Hub</a>
+            </section>
+
+<!-- Insurance Images Section -->
+<div class="insurance-section">
+    <div class="insurance-item">
+        <div class="image-row">
+            <img src="Detailinghub/Picture1.jpg" alt="Insurance Option 2">
+            <img src="Detailinghub/Picture3.jpg" alt="Insurance Option 1">
+        </div>
+        <h3 style="color: #ffa500;"><b>Enhancement Detail R2500</b></h3>
+        <p style="color: #fff;">Full body multistage wash & decon. 1-step polishing removes light scratches & defects..
+             Sealant & Ceramic Wax for durable protection while delivering optimal gloss & shine. Windshield Water-repellent,
+              free starter kit & expert car care tips Sedan/station starting at +$250, Jeep/SUV at +$350; oversize available upon request.
+        </p>
+    </div>
+
+    <div class="insurance-item">
+        <div class="image-row">
+            <img src="Detailinghub/Picture6.jpg" alt="Insurance Option 3">
+            <img src="Detailinghub/Picture7.jpg" alt="Insurance Option 1">
+        </div>
+        <h3 style="color: #ffa500;"><b>Interior Detail R1950</b></h3>
+        <p style="color: #fff;">Interior & Trunk: deep  cleaned & Leather &  Upholstery:<br>
+             Cleaned  Carpets, Mats, Fabric Seats: Shampoo-extracted. Dashboard,
+              Console, Door Panels: Cleaned and protected. 
+              Windows: Streak-free cleaning.
+              Sedan/station starting at +$250,
+              Jeep/SUV at +$350; oversize available upon request.
+        </p>
+    </div>
+</div>
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2024 All Things Cars. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

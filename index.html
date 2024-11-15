@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recommend a Car</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="carslogo.png" alt="logo">
+            <h1 style="color: #08c9c3;">Recommend a Car.</h1>
+        </div>
+
+        <div class="hamburger">☰</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allcars.html">All Cars</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#boxes">Get in Touch</a></li>
+            <li><button style="background-color: #ed3419;"><a href="SetAnAppointment.html#appointment"
+                        class="quote-btn"><b>Set an Appoinment</b></a></button></li>
+        </ul>
+    </nav>
+
+    <!-- Sidebar Nav Section -->
+    <div class="main-content">
+        <div class="sidebar-nav">
+            <h3 style="color: #ffa500;">Our Services</h3>
+            <br>
+            <nav>
+                <a href="insurance.html#friends-for-life">Insurance Deals</a>
+                <a href="#">RMI Workshops</a>
+                <a href="#">Roadside Assistance</a>
+                <a href="#">Car Spares</a>
+                <a href="detailing.html#thedetailinghub">Car Detailers</a>
+            </nav>
+        </div>
+        <section id="hero">
+            <h1>Welcome to Recommend a Car.</h1>
+            <br>
+            <p>Your ultimate destination for best Car Deals, Insurance Deals, RMI approved Workshops, and more...</p>
+            <br>
+            <button>Explore Our Collection</button>
+            <input type="text" id="search-bar" placeholder="Search cars..."
+                style="width: 250px;height: 45px; margin-left: 10px; padding: 5px; border-radius: 4px;">
+            <div id="search-results" style="margin-top: 10px; color: #ffa500;"></div>
+        </section>
+    </div>
+
+    <script>
+        // Car data with links as per the structure of your site
+        const cars = [
+            { name: "2018 Volkswagen Beetle", link: "allcars.html#vwbeetle" },
+            { name: "2023 BMW 740d", link: "allcars.html#bmw740d" },
+            { name: "2018 Volkswagen Golf R", link: "allcars.html#golf-r-details" },
+            { name: "2015 Audi 1.8 Sedan", link: "allcars.html#audired" },
+            { name: "2010 Audi A4 Sedan", link: "allcars.html#audia42010" },
+            { name: "2017 Nissan NV350", link: "allcars.html#nissannv350" },
+            { name: "Mazda CX3 2018", link: "allcars.html#mazdacx3" },
+            { name: "2016 Opel Adam 1.4 (3DR)", link: "allcars.html#opeladam" },
+            { name: "2015 Toyota Corolla Quest", link: "allcars.html#toyotacorolla2015" },
+            { name: "2020 VW Polo R-Line", link: "allcars.html#polorline" },
+            { name: "2021 Mercedes-Benz G63", link: "allcars.html#mercg63" },
+            { name: "2024 VW Touareg 3.0 TDI", link: "allcars.html#touaregv6" },
+        ];
+
+        // Function to filter search results
+        document.getElementById("search-bar").addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            const resultsContainer = document.getElementById("search-results");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            if (query) {
+                const filteredCars = cars.filter(car => car.name.toLowerCase().includes(query));
+                if (filteredCars.length > 0) {
+                    filteredCars.forEach(car => {
+                        const resultLink = document.createElement("a");
+                        resultLink.href = car.link;
+                        resultLink.textContent = car.name;
+                        resultLink.style.display = "block";
+                        resultLink.style.color = "#08c9c3";
+                        resultsContainer.appendChild(resultLink);
+                    });
+                } else {
+                    resultsContainer.textContent = "No results found";
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Slideshow Navigation
+        const prevBtn = document.querySelector('.prevbtn');
+        const nextBtn = document.querySelector('.nextbtn');
+        const slideshow = document.querySelector('.Gallery');
+
+        let index = 0;
+
+        function changeSlide() {
+            if (index >= slideshow.children.length) {
+                index = 0;
+            } else if (index < 0) {
+                index = slideshow.children.length - 1;
+            }
+            slideshow.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            index--;
+            changeSlide();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            index++;
+            changeSlide();
+        });
+    </script>
+
+    <!-- Slide Show Section -->
+    <section>
+        <div class="Gallery-container">
+            <img src="Images/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Images/2018 VW Golf R.jpg" alt="VW Golf R"></span>
+                    <span><img src="Images/VW Touareg.png" alt="VW Touareg"></span>
+                    <span><img src="Images/BMW 740d.jpg" alt="BMW 740d"></span>
+                    <span><img src="Images/Opel Adam.webp" alt="Opel Adam"></span>
+                    <span><img src="Images/Mazda CX3.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Images/Nissan NV350.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Images/pologti1.jpg" alt="Polo GTI"></span>
+                    <span><img src="Images/Audi Sedan 2015.png" alt="Audi Sedan"></span>
+                    <span><img src="Images/E400.jpg" alt="Benz E400"></span>
+                    <span><img src="Images/Audi A4 2010.png" alt="Audi A4 2010"></span>
+                    <span><img src="Images/Hilux 2.8.jpg" alt="Toyota Hilux 2.8"></span>
+                    <span><img src="Images/Golf R.jpg" alt="VW Golf R"></span>
+                    <span><img src="Images/Ford Figo.jpg" alt="Ford Figo"></span>
+                    <span><img src="Images/Polo R Line.jpg" alt="VW Polo R-Line"></span>
+                    <span><img src="Images/Toyota Corolla 2015.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Images/Mazda3.jpg" alt="Mazda3"></span>
+                    <span><img src="Images/ML500.jpg" alt="Benz ML500"></span>
+                </div>
+            </div>
+            <img src="Images/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+    <script>
+        // Function to adjust the gallery layout based on screen size
+        function adjustGalleryLayout() {
+            const gallery = document.querySelector('.Gallery');
+            if (window.innerWidth <= 768) {
+                gallery.style.flexDirection = 'column'; // Vertical scroll
+                gallery.style.overflowX = 'hidden';
+                gallery.style.overflowY = 'auto';
+            } else {
+                gallery.style.flexDirection = 'row'; // Horizontal scroll
+                gallery.style.overflowX = 'scroll';
+                gallery.style.overflowY = 'hidden';
+            }
+        }
+
+        // Call adjustGalleryLayout function when window is resized
+        window.addEventListener('resize', adjustGalleryLayout);
+
+        // Initial layout adjustment
+        adjustGalleryLayout();
+    </script>
+
+   <!-- Popular Cars Section -->
+    <section class="popular" id="popular">
+        <h2 style="color: #ffa500;">Popular Cars</h2>
+
+        <div class="wrap">
+            <div class="card">
+                <img src="2018 VW Beetle.jpg" alt="2018 VW Beetle" style="width: 100%;">
+
+                <div class="container">
+                    <h4 style="color: #ffa500;"><b>2018 Volkswagen Beetle</b></h4>
+                    <p>1.4 TSI R-Line Exclusive <br> R314 999 Est R6 200 P/M <br>Cash and Finance<br>Contact Siphiwe 0798916987 </p>
+                    <button><a href="allcars.html" class="beetle-btn">More Details</a></button>
+
+                </div>
+            </div>
+
+        <div class="card">
+            <img src="Golf R Grey/Picture1.jpg" alt="2018 VW Golf R" style="width: 100%;">
+
+                <div id="golf-r-details" class="container">
+                    <h4 style="color: #ffa500;"><b>2018 Volkswagen Golf R</b></h4>
+                    <p>R569 999 Est R10 799 P/M<br>75 200KMS on the clock. <br>Cash and Finance<br>Contact Stanley 0737435377 </p>
+                    <button><a href="allcars.html#golf-r-details" class="Golf-R-btn">More Details</a></button>
+
+
+
+                </div>
+            </div>
+
+        <div class="card">
+            <img src="Audi 2015/Picture1.png" alt="Audi 2015" style="width: 100%;">
+
+                <div class="container">
+                    <h4 style="color: #ffa500;"><b>2015 Audi 1.8 Sedan</b></h4>
+                    <p>Color Red 189 000KMS <br>Cash R99 900 <br>Stock ID. 17064<br>Contact Keke 0680755726 </p>
+                    <button><a href="allcars.html#audired" class="Audi Sedan">More Details</a></button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="Audi A4 2010/Picture1.png" alt="Audi 2015" style="width: 100%;">
+    
+                    <div class="container">
+                        <h4 style="color: #ffa500;"><b>2010 Audi A4 Sedan</b></h4>
+                        <p>Color Grey. 198 000KMS <br>Cash Only R149 900 <br>Stock ID. 1639821974<br>Contact Stanley 0737435377 </p>
+                        <button><a href="allcars.html#audia42010" class="Audi Sedan">More Details</a></button>
+    
+                    </div>
+                </div>
+
+            <div class="card">
+                <img src="Mazda CX3/Picture1.jpg" alt="Mazda CX3" style="width: 100%;">
+    
+                    <div class="container">
+                        <h4 style="color: #ffa500;"><b>Mazda CX3 2018</b></h4>
+                        <p>Int Blue Ext Black 79 493KMS <br>Cash R219 900 and Bank Finance<br>Stock ID. 15935<br>Contact Zintle 0697655339 </p>
+                        <button><a href="allcars.html#mazdacx3" class="Mazda CX3">More Details</a></button>
+    
+                    </div>
+                </div>
+
+            <div class="card">
+                <img src="2018 VW Beetle.jpg" alt="2018 VW Beetle" style="width: 100%;">
+    
+                    <div class="container">
+                        <h4 style="color: #ffa500;"><b>2018 Volkswagen Beetle</b></h4>
+                        <p>1.4 TSI R-Line Exclusive <br> R314 999 Est R6 200 P/M <br>Cash and Finance<br>Contact Siphiwe 0798916987 </p>
+                        <button>More Details</button>
+    
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <img src="Opel Adam 2016/Picture1.webp" alt="Audi 2015" style="width: 100%;">
+        
+                        <div class="container">
+                            <h4 style="color: #ffa500;"><b>2016 Opel Adam 1.4 (3DR)</b></h4>
+                            <p>Color Red. 105 236KMS <br>Cash and Finance R129 900 <br>Stock ID.OpelAdam<br>Contact Penelope 0739492811 </p>
+                            <button><a href="allcars.html#opeladam" class="Audi Sedan">More Details</a></button>
+        
+                        </div>
+                    </div>
+
+
+        
+                    <div class="card">
+                        <img src="Mazda CX3/Picture1.jpg" alt="Mazda CX3" style="width: 100%;">
+            
+                            <div class="container">
+                                <h4 style="color: #ffa500;"><b>Mazda CX3 2018</b></h4>
+                                <p>Int Blue Ext Black 79 493KMS <br>Cash R219 900 and Bank Finance<br>Stock ID. 15935<br>Contact Zintle 0697655339 </p>
+                                <button><a href="allcars.html#mazdacx3" class="Mazda CX3">More Details</a></button>
+            
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="Toyota Corolla 2015/Picture1.jpg" alt="Toyota Corolla" style="width: 100%;">
+                
+                                <div class="container">
+                                    <h4 style="color: #ffa500;"><b>2015 Toyota Corolla Quest</b></h4>
+                                    <p>Mileage 79 493KMS Manual Transmission <br>Cash Only R139 900<br>Stock ID. 1639790681<br>Contact Stanley 0737435377 </p>
+                                    <button><a href="allcars.html#toyotacorolla2015" class="Toyota Corolla">More Details</a></button>
+                
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="Nissan NV350/Picture1.jpg" alt="Nissan NV350" style="width: 100%;">
+                    
+                                    <div class="container">
+                                        <h4 style="color: #ffa500;"><b>2017 Nissan NV350</b></h4>
+                                        <p>Mileage 156 566KMS Manual Transmission <br>Cash Only R199 900<br>Stock ID. 1639803764<br>Contact Siphiwe 0798916987 </p>
+                                        <button><a href="allcars.html#nissannv350" class="Nissan NV350">More Details</a></button>
+                    
+                                    </div>
+                                </div>
+            
+        
+    
+
+        </div>
+
+    </section>
+
+ <!-- Exclusive Cars Section -->
+ <section class="exclusive" id="exclusive">
+    <h2 style="color: #ffa500;">Exclusive Cars</h2>
+    
+    <div class="card">
+        <img src="Merc G63/Picture1.jpg" alt="Merc G63" style="width: 100%;">
+
+            <div id="mercg63" class="container">
+                <h4 style="color: #ffa500;"><b>2021 Mercedes-Benz G63</b></h4>
+                <p>AMG G-Class. 4L V8 Turbo<br>R3 299 950 Est R59 900 P/M <br>Cash and Bank Finance<br>Contact Siphiwe 0798916987 </p>
+                <button><a href="allcars.html#mercg63" class="Golf-R-btn">More Details</a></button>
+
+            </div>
+        </div>
+    
+            <div class="card">
+                <img src="VW Touareg/Picture1.png" alt="2024 VW Touareg" style="width: 100%;">
+    
+                    <div id="touaregv6" class="container">
+                        <h4 style="color: #ffa500;"><b>2024 VW Touareg 3.0 TDI</b></h4>
+                        <p>R1 763 900 Est R27 900 P/M<br>Condition New. <br>Cash and Bank Finance<br>Contact Stanley 0737435377 </p>
+                        <button><a href="allcars.html#touaregv6" class="Golf-R-btn">More Details</a></button>
+    
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="BMW 740D 2023/Picture1.jpg" alt="BMW 740d" style="width: 100%;">
+        
+                        <div class="container">
+                            <h4 style="color: #ffa500;"><b>2023 BMW 740d</b></h4>
+                            <p>xDrive M-Power Sport. Mileage 43 700KMS <br>R1 699 950 Est.R31 430 <br> Cash and Bank Finance.<br>Contact Siphiwe 0798916987 </p>
+                            <button><a href="allcars.html#bmw740d" class="Mazda CX3">More Details</a></button>
+        
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="Toyota Corolla 2015/Picture1.jpg" alt="Toyota Corolla" style="width: 100%;">
+            
+                            <div class="container">
+                                <h4 style="color: #ffa500;"><b>2015 Toyota Corolla Quest</b></h4>
+                                <p>Mileage 79 493KMS Manual Transmission <br>Cash Only R139 900<br>Stock ID. 1639790681<br>Contact Stanley 0737435377 </p>
+                                <button><a href="allcars.html#toyotacorolla2015" class="Toyota Corolla">More Details</a></button>
+            
+                            </div>
+                        </div>
+    
+
+        <div class="card">
+            <img src="2018 VW Beetle.jpg" alt="2018 VW Beetle" style="width: 100%;">
+
+                <div class="container">
+                    <h4 style="color: #ffa500;"><b>2018 Volkswagen Beetle</b></h4>
+                    <p>1.4 TSI R-Line Exclusive <br> R314 999 Est R6 200 P/M <br>Cash and Finance<br>Contact Siphiwe 0798916987 </p>
+                    <button>More Details</button>
+
+                </div>
+            </div>
+
+
+            <div class="wrap">
+                <div class="card">
+                    <img src="2018 VW Beetle.jpg" alt="2018 VW Beetle" style="width: 100%;">
+    
+                    <div class="container">
+                        <h4 style="color: #ffa500;"><b>2018 Volkswagen Beetle</b></h4>
+                        <p>1.4 TSI R-Line Exclusive <br> R314 999 Est R6 200 P/M <br>Cash and Finance<br>Contact Siphiwe 0798916987 </p>
+                        <button><a href="allcars.html" class="beetle-btn">More Details</a></button>
+    
+                    </div>
+                </div>
+    
+            <div class="card">
+                <img src="Golf R Grey/Picture1.jpg" alt="2018 VW Golf R" style="width: 100%;">
+    
+                    <div id="golf-r-details" class="container">
+                        <h4 style="color: #ffa500;"><b>2018 Volkswagen Golf R</b></h4>
+                        <p>R569 999 Est R10 799 P/M<br>75 200KMS on the clock. <br>Cash and Finance<br>Contact Stanley 0737435377 </p>
+                        <button><a href="allcars.html#golf-r-details" class="Golf-R-btn">More Details</a></button>
+    
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="Mazda CX3/Picture1.jpg" alt="Mazda CX3" style="width: 100%;">
+        
+                        <div class="container">
+                            <h4 style="color: #ffa500;"><b>Mazda CX3 2018</b></h4>
+                            <p>Int Blue Ext Black 79 493KMS <br>Cash R219 900 and Bank Finance<br>Stock ID. 15935<br>Contact Zintle 0697655339 </p>
+                            <button><a href="allcars.html#mazdacx3" class="Mazda CX3">More Details</a></button>
+        
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="Toyota Corolla 2015/Picture1.jpg" alt="Toyota Corolla" style="width: 100%;">
+            
+                            <div class="container">
+                                <h4 style="color: #ffa500;"><b>2015 Toyota Corolla Quest</b></h4>
+                                <p>Mileage 79 493KMS Manual Transmission <br>Cash Only R139 900<br>Stock ID. 1639790681<br>Contact Stanley 0737435377 </p>
+                                <button><a href="allcars.html#toyotacorolla2015" class="Toyota Corolla">More Details</a></button>
+            
+                            </div>
+                        </div>
+    
+
+        <div class="card">
+            <img src="2018 VW Beetle.jpg" alt="2018 VW Beetle" style="width: 100%;">
+
+                <div class="container">
+                    <h4 style="color: #ffa500;"><b>2018 Volkswagen Beetle</b></h4>
+                    <p>1.4 TSI R-Line Exclusive <br> R314 999 Est R6 200 P/M <br>Cash and Finance<br>Contact Siphiwe 0798916987 </p>
+                    <button>More Details</button>
+
+                </div>
+            </div>
+
+
+            <!-- JavaScript for scrolling functionality -->
+            <script>
+
+                document.querySelectorAll(".Gallery-container").forEach(container => {
+                    const gallery = container.querySelector(".Gallery");
+                    const backBtn = container.querySelector(".backbtn");
+                    const nextBtn = container.querySelector(".nextbtn");
+
+                    nextBtn.addEventListener("click", () => {
+                        gallery.scrollLeft += gallery.offsetWidth / 4;
+                    });
+
+                    backBtn.addEventListener("click", () => {
+                        gallery.scrollLeft -= gallery.offsetWidth / 4;
+                    });
+                });
+
+
+            </script>
+            
+            
+            <script>
+                document.querySelector('.hamburger').addEventListener('click', function () {
+                    document.querySelector('.navbar').classList.toggle('active');
+                });
+            </script>
+
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2025 Recommend a Car. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

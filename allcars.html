@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recommend a Car</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="allcars.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="carslogo.png" alt="logo">
+            <h1 style="color: #08c9c3;">Recommend a Car.</h1>
+        </div>
+
+        <div class="hamburger">☰</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allcars.html">All Cars</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#boxes">Get in Touch</a></li>
+            <li><button style="background-color: #ed3419;"><a href="SetAnAppointment.html#appointment" class="quote-btn"><b>Set an Appoinment</b></a></button></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Sidebar Nav Section -->
+    <div class="main-content">
+        <div class="sidebar-nav">
+            <h3 style="color: #ffa500;">Our Services</h3>
+            <br>
+            <nav>
+                <a href="insurance.html#friends-for-life">Insurance Deals</a>
+                <a href="#">RMI Workshops</a>
+                <a href="#">Roadside Assistance</a>
+                <a href="#">Car Spares</a>
+                <a href="detailing.html#thedetailinghub">Car Detailers</a>
+            </nav>
+        </div>
+        <section id="hero">
+            <h1>Welcome to Recommend a Car.</h1>
+            <br>
+            <p>Your ultimate destination for best Car Deals, Insurance Deals, RMI approved Workshops, and more...</p>
+            <br>
+            <button>Explore Our Collection</button>
+            <input type="text" id="search-bar" placeholder="Search cars..." style="width: 250px;height: 45px; margin-left: 10px; padding: 5px; border-radius: 4px;">
+            <div id="search-results" style="margin-top: 10px; color: #ffa500;"></div>
+        </section>
+    </div>
+
+    <script>
+        // Car data with links as per the structure of your site
+        const cars = [
+            { name: "2018 Volkswagen Beetle", link: "allcars.html#vwbeetle" },
+            { name: "2023 BMW 740d", link: "allcars.html#bmw740d" },
+            { name: "2018 Volkswagen Golf R", link: "allcars.html#golf-r-details" },
+            { name: "2015 Audi 1.8 Sedan", link: "allcars.html#audired" },
+            { name: "2010 Audi A4 Sedan", link: "allcars.html#audia42010" },
+            { name: "2017 Nissan NV350", link: "allcars.html#nissannv350" },
+            { name: "Mazda CX3 2018", link: "allcars.html#mazdacx3" },
+            { name: "2016 Opel Adam 1.4 (3DR)", link: "allcars.html#opeladam" },
+            { name: "2015 Toyota Corolla Quest", link: "allcars.html#toyotacorolla2015" },
+            { name: "2020 VW Polo R-Line", link: "allcars.html#polorline" },
+            { name: "2021 Mercedes-Benz G63", link: "allcars.html#mercg63" },
+            { name: "2024 VW Touareg 3.0 TDI", link: "allcars.html#touaregv6" },
+             
+        ];
+
+        // Function to filter search results
+        document.getElementById("search-bar").addEventListener("input", function() {
+            const query = this.value.toLowerCase();
+            const resultsContainer = document.getElementById("search-results");
+            resultsContainer.innerHTML = ""; // Clear previous results
+            
+            if (query) {
+                const filteredCars = cars.filter(car => car.name.toLowerCase().includes(query));
+                if (filteredCars.length > 0) {
+                    filteredCars.forEach(car => {
+                        const resultLink = document.createElement("a");
+                        resultLink.href = car.link;
+                        resultLink.textContent = car.name;
+                        resultLink.style.display = "block";
+                        resultLink.style.color = "#08c9c3";
+                        resultsContainer.appendChild(resultLink);
+                    });
+                } else {
+                    resultsContainer.textContent = "No results found";
+                }
+            }
+        });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleMenu = document.querySelector('.toggle-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    });
+</script>
+
+    <!-- Slide Show Section -->
+       
+       <section class="popular" id="vwbeetle">
+        <h3 style="color: #08c9c3;">R314 999</h3>
+        <h2>2018 Volkswagen Beetle</h2>
+        <p>1.4 TSI R-Line Exclusive  R314 999 Est R6 200 P/M <br>Available on Cash and Finance.  Contact Siphiwe 0798916987 </p>
+        <br>
+        <div class="Gallery-container">
+            <img src="VW Beetle/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="VW Beetle/Picture1.jpg" alt="VW Beetle"></span>
+                    <span><img src="VW Beetle/Picture2.jpg" alt="VW Beetle"></span>
+                    <span><img src="VW Beetle/Picture3.jpg" alt="VW Beetle"></span>
+                    <span><img src="VW Beetle/Picture4.jpg" alt="VW Beetle"></span>
+                    <span><img src="VW Beetle/Picture5.jpg" alt="VW Beetle"></span>
+                    <span><img src="VW Beetle/Picture6.jpg" alt="VW Beetle"></span>
+                    <span><img src="VW Beetle/Picture7.jpg" alt="VW Beetle"></span>
+                    <span><img src="VW Beetle/Picture8.jpg" alt="VW Beetle"></span>
+                    
+                </div>
+            </div>
+            <img src="VW Beetle/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+
+        <section id="golf-r-details">
+        <h3 style="color: #08c9c3;"><a href="R569 999"></a>R569 999</h3>
+        <h2>2018 Volkswagen Golf R</h2>
+        <p>Golf R-Line Exclusive  R569 999 Est. R10 799 P/M <br>Available on Cash and Finance.  Contact Stanley 0737435377 </p>
+        <br>
+        <p>Daytime running lights, Panoramic sliding sunroof, Interior ambient lighting, Black R leather seats, Touchscreen infotainment system, Multifunctional steering wheel,</p>
+        <p>Digital cluster, Keyless entry and start, Heated front seats, Climate control, Electric handbrake, Rear spoiler, Side skirts, Park distance control (PDC) rear and front, Electric windows and mirrors.</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Golf R Grey/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Golf R Grey/Picture1.jpg" alt="VW Golf R"></span>
+                    <span><img src="Golf R Grey/Picture2.jpg" alt="VW Golf R"></span>
+                    <span><img src="Golf R Grey/Picture3.jpg" alt="VW Golf R"></span>
+                    <span><img src="Golf R Grey/Picture4.jpg" alt="VW Golf R"></span>
+                    <span><img src="Golf R Grey/Picture5.jpg" alt="VW Golf R"></span>
+                    <span><img src="Golf R Grey/Picture6.jpg" alt="VW Golf R"></span>
+                    <span><img src="Golf R Grey/Picture7.jpg" alt="VW Golf R"></span>
+                    <span><img src="Golf R Grey/Picture8.jpg" alt="VW Golf R"></span>
+                    
+                </div>
+            </div>
+            <img src="Golf R Grey/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+    <section id="audired">
+        <h3 style="color: #08c9c3;"><a href="R99 900"></a>R99 900</h3>
+        <h2>2015 Audi Sedan 1.8</h2>
+        <p>Audi 1.8 Automatic Petrol Available. Cash Only R99 900<br>189 000KMS. Doors 4 Seats 5.  Contact Keke 0680755726 </p>
+        <br>
+        <p>ABS, Airbags, Aircon, Bluetooth, CD Player, Central locking, Electric side mirror, Electric Windows, Fog lights, </p>
+        <p>Leather Interior, Mags, Mp3, Multi-function steering wheel, Spare keys, Xenon Lights</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Audi 2015/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Audi 2015/Picture1.png" alt="Audi Sedan"></span>
+                    <span><img src="Audi 2015/Picture2.jpeg" alt="Audi Sedan"></span>
+                    <span><img src="Audi 2015/Picture3.jpeg" alt="Audi Sedan"></span>
+                    <span><img src="Audi 2015/Picture4.jpeg" alt="Audi Sedan"></span>
+                    <span><img src="Audi 2015/Picture5.jpeg" alt="Audi Sedan"></span>
+                    <span><img src="Audi 2015/Picture6.png" alt="Audi Sedan"></span>
+                    <span><img src="Audi 2015/Picture7.png" alt="Audi Sedan"></span>
+                    <span><img src="Audi 2015/Picture8.jpeg" alt="Audi Sedan"></span>
+                    
+                </div>
+            </div>
+            <img src="Audi 2015/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+    <section id="mazdacx3">
+        <h3 style="color: #08c9c3;"><a href="R569 999"></a>R219 900</h3>
+        <h2>Mazda CX3 2.0 Active</h2>
+        <p>2.0L Manual Transmission Available Cash, Rent to Own, and Bank Finance<br>Mileage 79 493KMS. Doors 4 Seats 5.  Contact Zintle 0697655339 </p>
+        <br>
+        <p>Airbags, Number of seats  4, Air-conditioning  standard, Multifunction steering wheel, On-board computer,</p>
+        <p>Central locking, Keyless go, Power Assisted Steering, Interior design  cloth, Electric windows, Electric mirror</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Mazda CX3/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Mazda CX3/Picture1.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Mazda CX3/Picture2.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Mazda CX3/Picture3.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Mazda CX3/Picture4.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Mazda CX3/Picture5.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Mazda CX3/Picture6.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Mazda CX3/Picture7.jpg" alt="Mazda CX3"></span>
+                    <span><img src="Mazda CX3/Picture8.jpg" alt="Mazda CX3"></span>
+                    
+                </div>
+            </div>
+            <img src="Mazda CX3/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+    <section id="toyotacorolla2015">
+        <h3 style="color: #08c9c3;"><a href="R569 999"></a>R139 900</h3>
+        <h2>2015 Toyota Corolla Quest</h2>
+        <p>Manual Transmission. Fuel Petrol. Available on Cash Only<br>Mileage 241 191KMS. Excellent Condition. Contact Stanley 0737435377 </p>
+        <br>
+        <p>Electric Windows, Radio, Aircon, ABS, Air bags, Full service record,</p>
+        <p>Good Tyres, Great Interior, Central Locking, Air-conditioning  standard.</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Toyota Corolla 2015/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Toyota Corolla 2015/Picture1.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Toyota Corolla 2015/Picture2.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Toyota Corolla 2015/Picture3.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Toyota Corolla 2015/Picture4.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Toyota Corolla 2015/Picture5.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Toyota Corolla 2015/Picture6.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Toyota Corolla 2015/Picture7.jpg" alt="Toyota Corolla"></span>
+                    <span><img src="Toyota Corolla 2015/Picture8.jpg" alt="Toyota Corolla"></span>
+                    
+                </div>
+            </div>
+            <img src="Toyota Corolla 2015/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+
+    <section id="audia42010">
+        <h3 style="color: #08c9c3;"><a href="R149 900"></a>R149 900</h3>
+        <h2>2010 Audi A4 2.0 TFSI Ambition</h2>
+        <p>Manual Transmission. Fuel Petrol. Available on Cash Only<br>Mileage 198 000KMS. Excellent Condition. Contact Stanley 0737435377 </p>
+        <br>
+        <p>Electric Windows, Radio, Aircon, ABS, Air bags,Multi-functional Steering Wheel,</p>
+        <p>Sunroof, Great Interior, Central Locking, Air-conditioning  standard.</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Audi A4 2010/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Audi A4 2010/Picture1.png" alt="2010 Audi A4"></span>
+                    <span><img src="Audi A4 2010/Picture2.jpg" alt="2010 Audi A4"></span>
+                    <span><img src="Audi A4 2010/Picture3.jpg" alt="2010 Audi A4"></span>
+                    <span><img src="Audi A4 2010/Picture4.jpg" alt="2010 Audi A4"></span>
+                    <span><img src="Audi A4 2010/Picture5.jpg" alt="2010 Audi A4"></span>
+                    <span><img src="Audi A4 2010/Picture6.jpg" alt="2010 Audi A4"></span>
+                    <span><img src="Audi A4 2010/Picture7.jpg" alt="2010 Audi A4"></span>
+                    <span><img src="Audi A4 2010/Picture8.jpg" alt="2010 Audi A4"></span>
+                    
+                </div>
+            </div>
+            <img src="Audi A4 2010/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+    <section id="opeladam">
+        <h3 style="color: #08c9c3;"><a href="R129 900"></a>R129 900</h3>
+        <h2>2016 Opel Adam 1.4 3DR</h2>
+        <p>Manual Transmission. Fuel Petrol. Cash and Bank Finance <br>Mileage 105 236KMS. Excellent Condition. Contact Penelope 0739492811 </p>
+        <br>
+        <p>Opel Adam 1.4 (3dr) A 125 point quality inspection has been done. A trade in will be accepted.</p>
+        <p>It has a full service history. It has an extended warranty available. Finance can be arranged.
+        </p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Opel Adam 2016/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Opel Adam 2016/Picture1.webp" alt="Opel Adam"></span>
+                    <span><img src="Opel Adam 2016/Picture2.webp" alt="Opel Adam"></span>
+                    <span><img src="Opel Adam 2016/Picture3.webp" alt="Opel Adam"></span>
+                    <span><img src="Opel Adam 2016/Picture4.webp" alt="Opel Adam"></span>
+                    <span><img src="Opel Adam 2016/Picture5.webp" alt="Opel Adam"></span>
+                    <span><img src="Opel Adam 2016/Picture6.webp" alt="Opel Adam"></span>
+                    <span><img src="Opel Adam 2016/Picture7.webp" alt="Opel Adam"></span>
+                    <span><img src="Opel Adam 2016/Picture8.webp" alt="Opel Adam"></span>
+                    
+                </div>
+            </div>
+            <img src="Opel Adam 2016/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+    <section id="polorline">
+        <h3 style="color: #08c9c3;"><a href="R323 950"></a>R323 950</h3>
+        <h2>2020 VW Polo R-Line </h2>
+        <p>Comfortline 1.0 TSI. Available on Cash and Bank Finance <br> Excellent Condition. Contact Siphiwe 0798916987 </p>
+        <br>
+        <p>Daytime running lights, Sunroof, Climate control, Interior ambient lighting, Touchscreen infotainment system, Multifunctional steering wheel,</p>
+        <p>Digital cluster, Keyless entry and start,  Electric handbrake, Rear spoiler, Side skirts, Park distance control (PDC) rear and front, Electric windows and mirrors.</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Polo R Line/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Polo R Line/Picture1.jpg" alt="Polo R-Line"></span>
+                    <span><img src="Polo R Line/Picture2.jpg" alt="Polo R-Line"></span>
+                    <span><img src="Polo R Line/Picture3.jpg" alt="Polo R-Line"></span>
+                    <span><img src="Polo R Line/Picture4.jpg" alt="Polo R-Line"></span>
+                    <span><img src="Polo R Line/Picture5.jpg" alt="Polo R-Line"></span>
+                    <span><img src="Polo R Line/Picture6.jpg" alt="Polo R-Line"></span>
+                    <span><img src="Polo R Line/Picture7.jpg" alt="Polo R-Line"></span>
+                    <span><img src="Polo R Line/Picture8.jpg" alt="Polo R-Line"></span>
+                    
+                </div>
+            </div>
+            <img src="Polo R Line/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+
+    <section id="mercg63">
+        <h3 style="color: #08c9c3;"><a href="R3 229 950"></a>R3 229 950</h3>
+        <h2>2021 Mercedes-Benz G63</h2>
+        <p>AMG-G Class. 4L V8 Turbo. R3 229 950 Est R59 999 P/M  <br>Available on Cash and Finance. Contact Siphiwe 0798916987 </p>
+        <br>
+        <p>Daytime running LED lights, Blindspot assist, AMG red brake calipers, Distronic plus, Dashboard in nappa leather, Parking package,</p>
+        <p>Stainless steel side running bords, AMG performance steering wheel, Heat-insulating darktinted glass, Full transport package, AMG performance package, Sunroof, Rear towbar, Black nappa leather seats with cooling - heated function with electric function, Wooden dashboard,</p>
+        <p>Suspension adjustment, Exhaust function, Low range, Navigation, Climate control, Rear climate control, Burmester surround sound system, Mercedes-Benz infotainment system, Keyless entry and start, G MANUFAKTUR </p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Merc G63/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Merc G63/Picture1.jpg" alt="Benz G63"></span>
+                    <span><img src="Merc G63/Picture2.jpg" alt="Benz G63"></span>
+                    <span><img src="Merc G63/Picture3.jpg" alt="Benz G63"></span>
+                    <span><img src="Merc G63/Picture4.jpg" alt="Benz G63"></span>
+                    <span><img src="Merc G63/Picture5.jpg" alt="Benz G63"></span>
+                    <span><img src="Merc G63/Picture6.jpg" alt="Benz G63"></span>
+                    <span><img src="Merc G63/Picture7.jpg" alt="Benz G63"></span>
+                    <span><img src="Merc G63/Picture8.jpg" alt="Benz G63"></span>
+                    
+                </div>
+            </div>
+            <img src="Merc G63/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+
+    <section id="touaregv6">
+        <h3 style="color: #08c9c3;"><a href="R1 763 900"></a>R 1 763 900</h3>
+        <h2>2024 VW Touareg 3.0 TDI</h2>
+        <p>3.0L TDI V6 R-Line Automatic Transmission.7.8l Fuel per 100KMS. Available on Cash and Bank Finance <br>Gears 8. Condition New. Warranty 3yrs/120 000KMS. Contact Siphiwe 0798916987 </p>
+        <br>
+        <p>Premium navigation system Multi-color Active Info Display, selection of different info profiles possible HD Matrix headlamps with entry and exit lighting Trailer hitch,power-folding incl,</p>
+        <p>trailer maneuvering system 4-corner air suspension with electronic shock absorption control Night Vision Black Style package for R-Line Area View Camera and Park Assist Lane Keeping System and Lane Change Assist.</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="VW Touareg/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="VW Touareg/Picture1.png" alt="VW Touareg"></span>
+                    <span><img src="VW Touareg/Picture2.png" alt="VW Touareg"></span>
+                    <span><img src="VW Touareg/Picture3.png" alt="VW Touareg"></span>
+                    <span><img src="VW Touareg/Picture4.png" alt="VW Touareg"></span>
+                    <span><img src="VW Touareg/Picture5.png" alt="VW Touareg"></span>
+                    <span><img src="VW Touareg/Picture6.png" alt="VW Touareg"></span>
+                    <span><img src="VW Touareg/Picture7.png" alt="VW Touareg"></span>
+                    <span><img src="VW Touareg/Picture8.png" alt="VW Touareg"></span>
+                    
+                </div>
+            </div>
+            <img src="VW Touareg/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+
+    <section id="bmw740d">
+        <h3 style="color: #08c9c3;"><a href="R1 699 950"></a>R1 699 950</h3>
+        <h2>2023 BMW 740d M Sport</h2>
+        <p>7series xDrive M Sport. 43 700KMS R1 699 950 Est. R31 430 pm <br>Available on Cash and Finance. Contact Siphiwe 0798916987 </p>
+        <br>
+        <p>Daytime running LED lights, Blindspot assist, AMG red brake calipers, Distronic plus, Dashboard in nappa leather, Parking package,</p>
+        <p>Stainless steel side running bords, AMG performance steering wheel, Heat-insulating darktinted glass, Full transport package, AMG performance package, Sunroof, Rear towbar, Black nappa leather seats with cooling - heated function with electric function, Wooden dashboard,</p>
+        <p>Suspension adjustment, Exhaust function, Low range, Navigation, Climate control, Rear climate control, Burmester surround sound system, Mercedes-Benz infotainment system, Keyless entry and start, G MANUFAKTUR </p>
+        <br>
+        <div class="Gallery-container">
+            <img src="BMW 740D 2023/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="BMW 740D 2023/Picture1.jpg" alt="BMW 740d"></span>
+                    <span><img src="BMW 740D 2023/Picture2.jpg" alt="BMW 740d"></span>
+                    <span><img src="BMW 740D 2023/Picture3.jpg" alt="BMW 740d"></span>
+                    <span><img src="BMW 740D 2023/Picture4.jpg" alt="BMW 740d"></span>
+                    <span><img src="BMW 740D 2023/Picture5.jpg" alt="BMW 740d"></span>
+                    <span><img src="BMW 740D 2023/Picture6.jpg" alt="BMW 740d"></span>
+                    <span><img src="BMW 740D 2023/Picture7.jpg" alt="BMW 740d"></span>
+                    <span><img src="BMW 740D 2023/Picture8.jpg" alt="BMW 740d"></span>
+                    
+                </div>
+            </div>
+            <img src="BMW 740D 2023/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+
+    <section id="nissannv350">
+        <h3 style="color: #08c9c3;"><a href="R199 900"></a>R199 900</h3>
+        <h2>2017 Nissan NV350 Impendulo </h2>
+        <p>Manual Transmission. Fuel Petrol. 16 Seater. Available on Cash Only<br>156 566KMS ON the Clock. Excellent Condition. Contact Siphiwe 0798916987 </p>
+        <br>
+        <p>ONLY CASH - Great Tyres, Spotless Interior, Aircon, 16 Seater, AMAZING CONDITION!</p>
+        <br>
+        <div class="Gallery-container">
+            <img src="Nissan NV350/back.png" alt="backbtn" class="backbtn">
+            <div class="Gallery">
+                <div>
+                    <span><img src="Nissan NV350/Picture1.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Nissan NV350/Picture2.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Nissan NV350/Picture3.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Nissan NV350/Picture4.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Nissan NV350/Picture5.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Nissan NV350/Picture6.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Nissan NV350/Picture7.jpg" alt="Nissan NV350"></span>
+                    <span><img src="Nissan NV350/Picture8.jpg" alt="Nissan NV350"></span>
+                    
+                </div>
+            </div>
+            <img src="Nissan NV350/next.png" alt="nextbtn" class="nextbtn">
+        </div>
+    </section>
+
+    <!-- JavaScript for scrolling functionality -->
+    <script>
+
+document.querySelectorAll(".Gallery-container").forEach(container => {
+    const gallery = container.querySelector(".Gallery");
+    const backBtn = container.querySelector(".backbtn");
+    const nextBtn = container.querySelector(".nextbtn");
+
+    nextBtn.addEventListener("click", () => {
+        gallery.scrollLeft += gallery.offsetWidth / 4;
+    });
+
+    backBtn.addEventListener("click", () => {
+        gallery.scrollLeft -= gallery.offsetWidth / 4;
+    });
+});
+
+ 
+    </script>
+
+
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        document.querySelector('.navbar').classList.toggle('active');
+    });
+</script>
+
+</section>
+    
+ <!-- Footer Section -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2025 Recommend a Car. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
